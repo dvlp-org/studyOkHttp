@@ -12,12 +12,8 @@ import com.orhanobut.logger.PrettyFormatStrategy;
 
 
 import news.dvlp.studyokhttp.BuildConfig;
-import news.dvlp.studyokhttp.library.Converter.GsonConverterFactory;
-import news.dvlp.studyokhttp.library.Callback.ExecutorCallAdapterFactory;
 import news.dvlp.studyokhttp.library.Interceptor.HttpLoggingInterceptor;
 import news.dvlp.studyokhttp.library.RetrofitManager;
-import okhttp3.OkHttpClient;
-import retrofit2.Retrofit;
 
 /**
  * 创建时间：2018/8/2

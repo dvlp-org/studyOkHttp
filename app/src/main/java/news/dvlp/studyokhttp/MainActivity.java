@@ -17,7 +17,7 @@ import news.dvlp.studyokhttp.demo.ApiService;
 import news.dvlp.studyokhttp.demo.entity.Article;
 import news.dvlp.studyokhttp.demo.entity.LoginInfo;
 import news.dvlp.studyokhttp.demo.entity.WXArticle;
-import news.dvlp.studyokhttp.library.CallMana.CallManager;
+import news.dvlp.studyokhttp.library.RequsetManager.CallManager;
 import news.dvlp.studyokhttp.library.Callback.Call2;
 import news.dvlp.studyokhttp.library.Callback.Callback2;
 import news.dvlp.studyokhttp.library.Callback.CallbackAnim;
@@ -91,7 +91,8 @@ public class MainActivity extends Activity implements ILoadingView {
 
                     @Override
                     public void onSuccess(Call2<Article> call2, Article response) {
-                        Toast.makeText(MainActivity.this, "获取列表成功", Toast.LENGTH_SHORT).show();
+//                        Article article= JSON.parseObject(response,Article.class);
+                        Toast.makeText(MainActivity.this, "获取公众号列表成功", Toast.LENGTH_SHORT).show();
 
                     }
                 });

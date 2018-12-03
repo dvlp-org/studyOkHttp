@@ -1,40 +1,41 @@
 package news.dvlp.studyokhttp.library.Converter;
 
-import android.support.annotation.NonNull;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
 import com.google.gson.internal.$Gson$Types;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 
 import news.dvlp.studyokhttp.library.Callback.HttpError;
 import okhttp3.ResponseBody;
+import okio.BufferedSource;
+import okio.Okio;
 import retrofit2.Converter;
 
 /**
- * 创建时间：2018/4/3
- * 编写人： chengxin
- * 功能描述：json解析相关
+ * Created by liubaigang on 2018/12/3.
  */
-final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
-    private final Gson gson;
+
+public class FastJsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     private final Type type;
 
-    GsonResponseBodyConverter(Gson gson, Type type) {
+    public FastJsonResponseBodyConverter(Type type) {
         this.type = type;
-        this.gson = gson;
     }
 
-    @SuppressWarnings("unchecked")
+    /*
+    * 转换方法
+    */
     @Override
-    public T convert(@NonNull ResponseBody value) throws IOException {
-        String cacheStr = value.string();
+    public T convert(ResponseBody value) throws IOException {
+
+        BufferedSource bufferedSource = Okio.buffer(value.source());
+        String cacheStr = bufferedSource.readUtf8();
+        bufferedSource.close();
         try {
             JSONObject jsonObject = new JSONObject(cacheStr);
             final int code = jsonObject.getInt("errorCode");
@@ -64,7 +65,8 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
             if (Integer.class == rawType && data instanceof Integer) {
                 return (T) data;
             }
-            T t = gson.fromJson(data.toString(), type);
+
+            T t = JSON.parseObject(data.toString(), type);
             if (t != null) {
                 //防止线上接口修改导致反序列化失败奔溃
                 return t;
@@ -74,4 +76,5 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
             throw new HttpError("解析异常", cacheStr);
         }
     }
+
 }

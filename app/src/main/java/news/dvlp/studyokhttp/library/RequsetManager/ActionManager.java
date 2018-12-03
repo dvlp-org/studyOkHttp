@@ -1,4 +1,4 @@
-package news.dvlp.studyokhttp.library.CallMana;
+package news.dvlp.studyokhttp.library.RequsetManager;
 
 import android.app.Activity;
 import android.app.Fragment;

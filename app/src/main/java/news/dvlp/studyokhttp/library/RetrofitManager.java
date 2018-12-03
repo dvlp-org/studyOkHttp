@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import news.dvlp.studyokhttp.library.Callback.ExecutorCallAdapterFactory;
-import news.dvlp.studyokhttp.library.Converter.GsonConverterFactory;
+import news.dvlp.studyokhttp.library.Converter.FastJsonConverterFactory;
 import news.dvlp.studyokhttp.library.Interceptor.HttpLoggingInterceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -68,7 +68,7 @@ public final class RetrofitManager {
                         .addNetworkInterceptor(httpLoggingInterceptor)
                         .build())
                 .addCallAdapterFactory(ExecutorCallAdapterFactory.INSTANCE)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(FastJsonConverterFactory.create())
                 .build();
         init(retrofit);
     }

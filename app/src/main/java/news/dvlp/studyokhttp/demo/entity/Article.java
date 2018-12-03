@@ -34,14 +34,14 @@ public class Article {
      * visible : 1
      * zan : 0
      */
-    public int curPage;
-    public List<String> datas;
-    public int offset;
-    public boolean over;
+    public String curPage;
+    public String datas;
+    public String offset;
+    public String over;
 
-    public int pageCount;
-    public int size;
-    public int total;
+    public String pageCount;
+    public String size;
+    public String total;
 
 
 

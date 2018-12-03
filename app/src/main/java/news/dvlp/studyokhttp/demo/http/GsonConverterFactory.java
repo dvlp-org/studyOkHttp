@@ -1,4 +1,4 @@
-package news.dvlp.studyokhttp.library.Converter;
+package news.dvlp.studyokhttp.demo.http;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;

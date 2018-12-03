@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package news.dvlp.studyokhttp.library.Converter;
+package news.dvlp.studyokhttp.demo.http;
 
 
 import com.google.gson.Gson;

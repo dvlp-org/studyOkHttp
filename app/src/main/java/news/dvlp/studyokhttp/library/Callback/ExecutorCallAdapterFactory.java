@@ -8,7 +8,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.concurrent.Executor;
 
-import news.dvlp.studyokhttp.library.CallMana.CallManager;
+import news.dvlp.studyokhttp.library.RequsetManager.CallManager;
 import news.dvlp.studyokhttp.library.Utils;
 import okhttp3.Request;
 import retrofit2.Call;
