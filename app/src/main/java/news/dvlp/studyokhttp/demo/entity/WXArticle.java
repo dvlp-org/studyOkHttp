@@ -2,7 +2,7 @@ package news.dvlp.studyokhttp.demo.entity;
 
 /**
  * 创建时间：2018/11/15
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：实体项
  */
 public class WXArticle {

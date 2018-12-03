@@ -2,7 +2,7 @@ package news.dvlp.studyokhttp.demo.entity;
 
 /**
  * 普通的结果提示 ，code=0代表成功
- * Created by chengxin on 2017/9/26.
+ * Created by karler on 2017/9/26.
  */
 public class BaseResult<T> {
     private int code;

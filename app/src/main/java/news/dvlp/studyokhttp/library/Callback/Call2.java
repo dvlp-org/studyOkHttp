@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 /**
  * 创建时间：2018/4/8
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：添加重载方法{@link Call2#enqueue(Object, Callback2)}方法
  */
 public interface Call2<T> extends retrofit2.Call<T> {

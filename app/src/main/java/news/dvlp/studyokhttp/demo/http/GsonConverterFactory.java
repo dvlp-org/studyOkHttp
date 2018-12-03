@@ -15,7 +15,7 @@ import retrofit2.Retrofit;
 
 /**
  * 创建时间：2018/4/3
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：json解析相关
  */
 public class GsonConverterFactory extends Converter.Factory {

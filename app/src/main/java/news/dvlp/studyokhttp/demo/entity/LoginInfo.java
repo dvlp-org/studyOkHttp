@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 创建时间：2018/11/15
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：登录信息
  */
 public class LoginInfo {

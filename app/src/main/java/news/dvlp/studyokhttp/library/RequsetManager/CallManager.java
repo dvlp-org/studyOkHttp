@@ -11,7 +11,7 @@ import retrofit2.Call;
 
 /**
  * 创建时间：2018/5/31
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：全局管理Call请求管理,just like {@link okhttp3.Dispatcher}
  */
 public final class CallManager implements ActionManager<Call<?>> {

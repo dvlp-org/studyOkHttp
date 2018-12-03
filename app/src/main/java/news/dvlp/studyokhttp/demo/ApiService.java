@@ -16,7 +16,7 @@ import retrofit2.http.POST;
 
 /**
  * 创建时间：2018/4/8
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：测试接口
  */
 public interface ApiService {

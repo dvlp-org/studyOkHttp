@@ -20,7 +20,7 @@ import retrofit2.Converter;
 
 /**
  * 创建时间：2018/4/3
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：json解析相关
  */
 final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {

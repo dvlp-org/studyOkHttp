@@ -12,7 +12,7 @@ import okhttp3.ResponseBody;
 
 /**
  * 创建时间：2018/8/2
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：上传或下载进度监听拦截器
  */
 public class ProgressInterceptor implements Interceptor {

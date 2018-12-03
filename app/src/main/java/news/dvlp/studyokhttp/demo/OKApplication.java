@@ -17,7 +17,7 @@ import news.dvlp.studyokhttp.library.RetrofitManager;
 
 /**
  * 创建时间：2018/8/2
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：
  */
 public class OKApplication extends Application {

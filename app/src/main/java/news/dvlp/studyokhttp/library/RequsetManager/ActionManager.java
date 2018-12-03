@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 
 /**
  * 创建时间：2018/9/11
- * 编写人： chengxin
+ * 编写人： karler
  * 功能描述：Action行为生命周期管理
  */
 public interface ActionManager<Action> {

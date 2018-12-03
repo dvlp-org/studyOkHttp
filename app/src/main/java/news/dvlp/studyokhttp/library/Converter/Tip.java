@@ -2,7 +2,7 @@ package news.dvlp.studyokhttp.library.Converter;
 
 /**
  * 普通的结果提示 ，code=0代表成功
- * Created by chengxin on 2017/9/26.
+ * Created by karler on 2017/9/26.
  */
 public class Tip {
     private int code = -1;
