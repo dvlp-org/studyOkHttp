@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 
 import news.dvlp.studyokhttp.library.Callback.HttpError;
+import news.dvlp.studyokhttp.library.ConfigHttp.ConfigHttps;
+import news.dvlp.studyokhttp.library.Utils;
 import okhttp3.ResponseBody;
 import okio.BufferedSource;
 import okio.Okio;
@@ -38,17 +40,18 @@ public class FastJsonResponseBodyConverter<T> implements Converter<ResponseBody,
         bufferedSource.close();
         try {
             JSONObject jsonObject = new JSONObject(cacheStr);
-            final int code = jsonObject.getInt("errorCode");
-            final String msg = jsonObject.getString("errorMsg");
+            final int code = jsonObject.getInt(Utils.formatNull(ConfigHttps.codeTag,"errorCode"));
+            final String msg = jsonObject.getString(Utils.formatNull(ConfigHttps.msgTag,"errorMsg"));
+            Object data = jsonObject.get(Utils.formatNull(ConfigHttps.dataTag,"data"));
             Tip tip = new Tip(code, msg);
-            if (code != 0) {
+            if (code != Integer.parseInt(Utils.formatNull(ConfigHttps.successNum+"","0"))) {
                 throw new HttpError(msg, tip);
             }
             Class<?> rawType = $Gson$Types.getRawType(type);
             if (Tip.class == rawType) {
                 return (T) tip;
             }
-            Object data = jsonObject.get("data");
+
             if (data == JSONObject.NULL) {
                 //in case
                 throw new HttpError("暂无数据", tip);

@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import news.dvlp.studyokhttp.library.Callback.ExecutorCallAdapterFactory;
+import news.dvlp.studyokhttp.library.ConfigHttp.ConfigHttps;
 import news.dvlp.studyokhttp.library.Converter.FastJsonConverterFactory;
 import news.dvlp.studyokhttp.library.Interceptor.HttpLoggingInterceptor;
 import okhttp3.OkHttpClient;
@@ -51,6 +52,13 @@ public final class RetrofitManager {
         } else {
             Log.e(TAG, WARNING_RE_INIT_RETROFIT);
         }
+    }
+
+    public static void initJSonTag(String codeStr,String msgStr,String dataStr,int successVal) {
+        ConfigHttps.codeTag=codeStr;
+        ConfigHttps.msgTag=msgStr;
+        ConfigHttps.dataTag=dataStr;
+        ConfigHttps.successNum=successVal;
     }
 
     public static void init(String baseUrl) {

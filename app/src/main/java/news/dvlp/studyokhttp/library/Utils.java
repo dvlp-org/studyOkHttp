@@ -2,6 +2,7 @@ package news.dvlp.studyokhttp.library;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -78,5 +79,15 @@ public class Utils {
         tr.printStackTrace(pw);
         pw.flush();
         return sw.toString();
+    }
+    /**
+     * 格式化空传
+     *
+     * @param value
+     * @param defaultValue
+     * @return
+     */
+    public static String formatNull(String value, String defaultValue) {
+        return TextUtils.isEmpty(value) || "null".equals(value) ? defaultValue : value;
     }
 }
